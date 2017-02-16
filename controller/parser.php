@@ -429,7 +429,6 @@ function shiftAndEscape(&$array, $key){
   unset($array[$key]);
   $array = array_values($array);
   return pg_escape_string($return);
-  break;
 }
 
 function my_escape($key) {
