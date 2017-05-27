@@ -322,10 +322,10 @@ function renewAccessToken() {
   }
   if(strpos($ret, '"type":"OAuthException"') !== false)
     die("Old access token (visit: https://developers.facebook.com/tools/explorer/".APPID." and generate a token)\n");
-  parse_str($ret, $token);
+  $token = json_decode($ret, true);
 
   $facebook->setAccessToken($token['access_token']);
-  $token['expire_time'] = $token['expires']+time();
+  $token['expire_time'] = $token['expires_in']+time();
   print "New token: " . $token['access_token'];
   print "\nToken expires in ". ($token['expire_time'] - time()) ." secs <br/>\n\n";
   flush();
