@@ -281,7 +281,8 @@ function createInserts($filePrefix, $array, $db) {
 }
 
 function insertToDB($query, $db) {
-  if(DB == "mysql") {
+  if(true) {
+  //if(DB == "mysql") {
     //if(!$db->autocommit(FALSE))
       //die($db->error);
     $db->set_charset("utf8");
@@ -298,7 +299,8 @@ function insertToDB($query, $db) {
            *  if(is_array($l))
            *    throw new Exception($key . " . ". var_export($line, true). PHP_EOL . var_export($l, true). PHP_EOL);
            */
-          $line = "(".implode(",", $line).")";
+          $line = array_map(array($db, 'real_escape_string'), $line);
+          $line = "('".implode("','", $line)."')";
         }
         //$sql = "INSERT IGNORE INTO ".$key." VALUES ".implode(',', $v ).";".PHP_EOL;
         $sql = "REPLACE INTO ".$key." VALUES ".implode(',', $v).";".PHP_EOL;

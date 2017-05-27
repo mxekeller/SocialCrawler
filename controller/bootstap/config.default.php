@@ -13,5 +13,11 @@ ini_set('error_log','logFile.log');
 //define('PDO_username','');
 //define('PDO_password', '');
 
+//define('MYSQL_HOST', '');
+//define('MYSQL_PORT', '');
+//define('MYSQL_DB', '');
+//define('MYSQL_USER', '');
+//define('MYSQL_PASS', '');
+
 //define('TRACKING_ID', '');
 ?>
