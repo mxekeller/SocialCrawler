@@ -15,6 +15,8 @@ The agent is dependent on the Facebook PHP SDK. To install just do a submodule u
 
 ______________________________________________________________________________________
 ### Configuration ###
+Install php and make sure the php curl extension is enabled.
+
 Most of the time you only need to use the agent.
 
 Create a Facebook application at: https://developers.facebook.com/apps, 
